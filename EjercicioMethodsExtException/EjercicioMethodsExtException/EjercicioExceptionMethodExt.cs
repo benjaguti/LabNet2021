@@ -1,4 +1,5 @@
 ﻿using EjercicioMethodsExtException.Entidades;
+using EjercicioMethodsExtException.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,10 +31,19 @@ namespace EjercicioMethodsExtException
             try
             {
                 // se uso valores en int ya que al calcular la división por float da infinito.
-                int dividendo = int.Parse(txtValorDiv.Text);
-                int cociente = dividendo / 0;
-                txtSolucion.Text = cociente.ToString();
-                MessageBox.Show("Se realizó la división con Exito!");
+                if (txtValorDiv.Text.Equals(""))
+                {
+                    MessageBox.Show("Ingrese algun valor Entero");
+                }
+                else
+                {
+                    int dividendo = int.Parse(txtValorDiv.Text);
+                    int cociente = dividendo / 0;
+                    txtSolucion.Text = cociente.ToString();
+                    MessageBox.Show("Se realizó la división con Exito!");
+
+                }
+                
             }
 
             catch (FormatException)
@@ -58,12 +68,25 @@ namespace EjercicioMethodsExtException
 
             try
             {
+                if (txtDividendo.Text.Equals(""))
+                {
+                    MessageBox.Show("Ingrese el dividendo de la division");
+                }
+                else if (txtDivisor.Text.Equals(""))
+                {
+                    MessageBox.Show("Ingrese un divisor para realizar la division");
+                }
 
-                int dividendo = int.Parse(txtDividendo.Text);
-                int divisor = int.Parse(txtDivisor.Text);
-                float cociente = dividendo / divisor;
-                txtCociente.Text = cociente.ToString();
-                MessageBox.Show("Se realizó la división con Exito!");
+                else 
+                {
+                    int dividendo = int.Parse(txtDividendo.Text);
+                    int divisor = int.Parse(txtDivisor.Text);
+                    float cociente = dividendo / divisor;
+                    txtCociente.Text = cociente.ToString();
+                    MessageBox.Show("Se realizó la división con Exito!");
+
+                }
+    
 
             }
 
@@ -84,17 +107,35 @@ namespace EjercicioMethodsExtException
         
         private void btnFormatoExc_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 int numero = int.Parse(txtLetra.Text);
-                numero.MultiplicarPorQuince();
-
+                int rdo = numero.MultiplicarPorQuince();
+                MessageBox.Show($"el resultado de multiplicar {numero} * 15 es: {rdo}");
             }
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.Message + "\n\n" + ex.StackTrace  + "\n\n" + "Asegurese de ingresar un numero entero");
+            }
+
             catch (Exception ex)
             {
-                MessageBox.Show(ex + "\n\nTipo de excepcion: ExceptionFormat" );
+                MessageBox.Show(ex.Message);
             }
+        }
+        private void btnExceptionH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Logic.CustException();
+            }
+            catch (CustomException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
     }
 }
