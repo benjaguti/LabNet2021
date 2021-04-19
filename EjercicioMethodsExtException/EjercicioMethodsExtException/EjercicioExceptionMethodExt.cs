@@ -24,13 +24,14 @@ namespace EjercicioMethodsExtException
         {
 
         }
-
+ //************************* Ejercicio 1 *****************************************
         private void btnDiv_Click(object sender, EventArgs e)
         {
 
             try
             {
                 // se uso valores en int ya que al calcular la división por float da infinito.
+                // Se valida por medio del if que el campo no este vacio
                 if (txtValorDiv.Text.Equals(""))
                 {
                     MessageBox.Show("Ingrese algun valor Entero");
@@ -48,11 +49,13 @@ namespace EjercicioMethodsExtException
 
             catch (FormatException)
             {
+                //Excepcion por que el formato ingresado es incorrecto
                 MessageBox.Show("Los valores ingresado no cumplen con el formato indicado. \nVerifique que sean valores númericos enteros!!!");
             }
 
             catch (DivideByZeroException)
             {
+                //Excepcion por cero
                 MessageBox.Show("Error: No se puede dividir por cero");
             }
 
@@ -62,7 +65,7 @@ namespace EjercicioMethodsExtException
             }
         }
 
-
+ //************************* Ejercicio 2 *****************************************
         private void btnDividir_Click(object sender, EventArgs e)
         {
 
@@ -70,10 +73,12 @@ namespace EjercicioMethodsExtException
             {
                 if (txtDividendo.Text.Equals(""))
                 {
+                    // Se valida por medio del if que el campo no este vacio
                     MessageBox.Show("Ingrese el dividendo de la division");
                 }
                 else if (txtDivisor.Text.Equals(""))
                 {
+                    // Se valida por medio del if que el campo no este vacio
                     MessageBox.Show("Ingrese un divisor para realizar la division");
                 }
 
@@ -103,8 +108,8 @@ namespace EjercicioMethodsExtException
 
         }
 
+ //************************* Ejercicio 3 *****************************************
 
-        
         private void btnFormatoExc_Click(object sender, EventArgs e)
         {
 
@@ -112,6 +117,7 @@ namespace EjercicioMethodsExtException
             {
                 if (txtLetra.Text.Equals(""))
                 {
+                    // Se valida por medio del if que el campo no este vacio
                     MessageBox.Show("Porfavor ingresar un valor, gracias!");
 
                 }
@@ -133,10 +139,13 @@ namespace EjercicioMethodsExtException
                 MessageBox.Show(ex.Message);
             }
         }
+
+//************************* Ejercicio 4 *****************************************
         private void btnExceptionH_Click(object sender, EventArgs e)
         {
             try
             {
+                //Se captura la excepcion
                 Logic.CustException();
             }
             catch (CustomException ex)

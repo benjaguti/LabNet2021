@@ -10,6 +10,7 @@ namespace EjercicioMethodsExtException.Entidades
     public static class Logic
     {
 
+        //Metodo CustException instancia la clase CustomException y es asigna un ma¿ensaje string como parametro
         public static void CustException() 
         {
 
@@ -17,6 +18,7 @@ namespace EjercicioMethodsExtException.Entidades
             
         }
 
+        //MultiplicarPorQuince agarra un valor int y devuelve el valor multiplicado por quince
         public static int MultiplicarPorQuince(this int numero) 
         {
             return numero * 15;
