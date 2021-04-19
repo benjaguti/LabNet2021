@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EjercicioPoo.Properties
+namespace EjercicioMethodsExtException.Properties
 {
 
 
