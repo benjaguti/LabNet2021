@@ -48,10 +48,12 @@
             this.txtLetra = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnExceptionH = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,7 +65,7 @@
             this.groupBox1.Controls.Add(this.txtCociente);
             this.groupBox1.Controls.Add(this.txtDivisor);
             this.groupBox1.Controls.Add(this.txtDividendo);
-            this.groupBox1.Location = new System.Drawing.Point(44, 164);
+            this.groupBox1.Location = new System.Drawing.Point(44, 222);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 201);
             this.groupBox1.TabIndex = 1;
@@ -194,7 +196,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.btnFormatoExc);
             this.groupBox3.Controls.Add(this.txtLetra);
-            this.groupBox3.Location = new System.Drawing.Point(386, 25);
+            this.groupBox3.Location = new System.Drawing.Point(365, 25);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(260, 121);
             this.groupBox3.TabIndex = 3;
@@ -230,8 +232,9 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.btnExceptionH);
-            this.groupBox4.Location = new System.Drawing.Point(386, 169);
+            this.groupBox4.Location = new System.Drawing.Point(365, 222);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(260, 121);
             this.groupBox4.TabIndex = 4;
@@ -248,15 +251,28 @@
             this.btnExceptionH.UseVisualStyleBackColor = true;
             this.btnExceptionH.Click += new System.EventHandler(this.btnExceptionH_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::EjercicioMethodsExtException.Properties.Resources.prin;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(659, 453);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // EjercicioExceptionMethodExt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 377);
+            this.ClientSize = new System.Drawing.Size(659, 453);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "EjercicioExceptionMethodExt";
             this.Text = "Ventana Principal";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -267,6 +283,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,6 +310,7 @@
         private System.Windows.Forms.TextBox txtLetra;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnExceptionH;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

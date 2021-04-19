@@ -110,9 +110,18 @@ namespace EjercicioMethodsExtException
 
             try
             {
-                int numero = int.Parse(txtLetra.Text);
-                int rdo = numero.MultiplicarPorQuince();
-                MessageBox.Show($"el resultado de multiplicar {numero} * 15 es: {rdo}");
+                if (txtLetra.Text.Equals(""))
+                {
+                    MessageBox.Show("Porfavor ingresar un valor, gracias!");
+
+                }
+                else
+                {
+                    int numero = int.Parse(txtLetra.Text);
+                    int rdo = numero.MultiplicarPorQuince();
+                    MessageBox.Show($"el resultado de multiplicar {numero} * 15 es: {rdo}");
+                }
+                
             }
             catch (FormatException ex)
             {
