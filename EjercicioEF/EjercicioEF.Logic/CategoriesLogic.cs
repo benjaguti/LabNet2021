@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace EjercicioEF.Logic
 {
-    public class CategoriesLogic : BaseLogic
+    public class CategoriesLogic : BaseLogic, ABMLogic<Categories>
     {
         //El siguiente metodo realiza un insert a la base de datos
-        public void AddCategory(Categories newCategories)
+        
+        public void Insert(Categories newCategories)
         {
             context.Categories.Add(newCategories);
             
             context.SaveChanges();
         }
 
-        public void DeleteCategory(int id) 
+        public void Delete(int id) 
         {
-            //var categoryDelete = context.Categories.First(r => r.CategoryID == id);
             var categoryDelete = context.Categories.Find(id);
 
             context.Categories.Remove(categoryDelete);
@@ -28,7 +28,7 @@ namespace EjercicioEF.Logic
 
         }
 
-        public void CategoryUpdate(Categories cat) 
+        public void Update(Categories cat) 
         {
             var catUpdate = context.Categories.Find(cat.CategoryID);
             

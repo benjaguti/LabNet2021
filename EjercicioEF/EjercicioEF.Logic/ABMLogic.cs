@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace EjercicioEF.Logic
 {
-    interface ABMLogic
+    interface ABMLogic<B>
     {
+        void Insert(B newCategories);
+        void Delete(int id);
+        void Update(B cat);
 
 
     }
