@@ -48,12 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseLogic.cs" />
     <Compile Include="CategoriesLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EjercicioEF.Data\EjercicioEF.Data.csproj">
+      <Project>{5BCC4B08-7CAA-42C6-A567-3BE3C4758136}</Project>
+      <Name>EjercicioEF.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EjercicioEF.Entities\EjercicioEF.Entities.csproj">
+      <Project>{72757098-5B85-477C-88C9-A175D51CC15F}</Project>
+      <Name>EjercicioEF.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

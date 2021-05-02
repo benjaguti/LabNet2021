@@ -57,5 +57,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EjercicioEF.Entities\EjercicioEF.Entities.csproj">
+      <Project>{72757098-5B85-477C-88C9-A175D51CC15F}</Project>
+      <Name>EjercicioEF.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EjercicioEF.Logic\EjercicioEF.Logic.csproj">
+      <Project>{9A74AE1A-2B3B-49AE-9215-1BCD560DCC28}</Project>
+      <Name>EjercicioEF.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
