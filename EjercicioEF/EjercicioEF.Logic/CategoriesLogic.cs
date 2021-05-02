@@ -13,13 +13,28 @@ namespace EjercicioEF.Logic
         public void AddCategory(Categories newCategories)
         {
             context.Categories.Add(newCategories);
+            
             context.SaveChanges();
         }
 
         public void DeleteCategory(int id) 
         {
-            var categoryDelete = context.Categories.First(r => r.CategoryID == id);
+            //var categoryDelete = context.Categories.First(r => r.CategoryID == id);
+            var categoryDelete = context.Categories.Find(id);
 
+            context.Categories.Remove(categoryDelete);
+            
+            context.SaveChanges();
+
+        }
+
+        public void CategoryUpdate(Categories cat) 
+        {
+            var catUpdate = context.Categories.Find(cat.CategoryID);
+            
+            catUpdate.Description = cat.Description;
+            
+            context.SaveChanges();
         }
 
     }

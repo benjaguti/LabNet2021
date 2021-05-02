@@ -15,6 +15,7 @@ namespace EjercicioEF.UI
 
             CategoriesLogic catLogic = new CategoriesLogic();
 
+//****************************************************************
             catLogic.AddCategory(new Categories
             {
                 CategoryID = 9,
@@ -24,7 +25,18 @@ namespace EjercicioEF.UI
 
             });
 
+//****************************************************************
+            catLogic.DeleteCategory(10);
+
             Console.ReadLine();
+
+//****************************************************************
+            catLogic.CategoryUpdate(new Categories
+            {
+                Description = "Nueva Descripcion",
+                CategoryID = 10
+
+            });
 
         }
     }
