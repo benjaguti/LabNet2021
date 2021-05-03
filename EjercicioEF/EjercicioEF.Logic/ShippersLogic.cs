@@ -7,21 +7,39 @@ using System.Threading.Tasks;
 
 namespace EjercicioEF.Logic
 {
-    class ShippersLogic : BaseLogic, ABMLogic<Shippers>
+    public class ShippersLogic : BaseLogic, ABMLogic<Shippers>
     {
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var shippersDelete = context.Shippers.Find(id);
+
+            context.Shippers.Remove(shippersDelete);
+
+            context.SaveChanges();
         }
 
-        public void Insert(Shippers newCategories)
+
+        public List<Shippers> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Shippers.ToList();
         }
 
-        public void Update(Shippers cat)
+        public void Insert(Shippers newShip)
         {
-            throw new NotImplementedException();
+            context.Shippers.Add(newShip);
+
+            context.SaveChanges();
         }
+
+        public void Update(Shippers ship)
+        {
+            var shipUpdate = context.Shippers.Find(ship.ShipperID);
+
+            shipUpdate.Phone = ship.Phone;
+
+            context.SaveChanges();
+        }
+
+
     }
 }

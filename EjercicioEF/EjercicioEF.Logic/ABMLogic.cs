@@ -8,10 +8,10 @@ namespace EjercicioEF.Logic
 {
     interface ABMLogic<B>
     {
+        List<B> GetAll();
         void Insert(B newCategories);
         void Delete(int id);
         void Update(B cat);
-
 
     }
 }
