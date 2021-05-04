@@ -57,5 +57,19 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppLinqQuerys.Data\AppLinqQuerys.Data.csproj">
+      <Project>{513624F1-7EA5-4391-B14D-3424CDD303F1}</Project>
+      <Name>AppLinqQuerys.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppLinqQuerys.Entities\AppLinqQuerys.Entities.csproj">
+      <Project>{55EE5B9F-20AD-4BE3-91D5-FC6838250141}</Project>
+      <Name>AppLinqQuerys.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppLinqQuerys.Logic\AppLinqQuerys.Logic.csproj">
+      <Project>{a0a95dc4-3f77-471d-bc27-a1b138e6ce4f}</Project>
+      <Name>AppLinqQuerys.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
