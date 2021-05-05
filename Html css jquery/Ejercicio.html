@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Estilos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src = js/bootstrap.min.js></script>
+    <script type="text/javascript" src = js/jquery-3.6.0.min.js></script>
+    <script>
+        $(document).ready(function(){
+            $("#formLabs").validate();
+        });
+    </script>
+
+    <script>
+         function limpiarCampos() {
+    document.getElementById("formLabs").reset();
+             }
+    </script>
+    <title>EjercicioFormulario</title>
+</head>
+<body>
+    <div class="titulo">
+        <h2><b>CONTACTO</b></h2>
+        <p>Completa con tus datos:</p>
+    </div>
+    <div class="formulario">
+        <form id="formLabs" action="" method="POST">  
+            <div class="infoPersonal">
+                <h6><strong>Información Personal</strong></h6>
+                <label for="nombre">Nombre:<span>(required)</span></label><br>
+                <input class="ingresoDatos" type="text" name="nombre" id="nombre" required><br>
+                <label for="apellido">Apellido:<span>(required)</span></label><br>
+                <input class="ingresoDatos" type="text" name="apellido" id = "apellido"required><br>
+                <label for="edad">Edad:<span>(required)</span></label><br>
+                <input class="ingresoDatos" type="text" name="edad" id= "edad" ><br>
+                <input type="radio" name="sexo" required>Hombre<br>
+                <input type="radio" name="sexo" required>Mujer<br>
+                <input type="radio" name="sexo" required>Otros
+            </div>
+            <div class="infoAdicional">
+                <h6><strong>Información Adicional</strong></b></h6>
+                <label for="nombreEmpresa">Empresa:<span>(required)</span></label><br>
+                <input class="ingresoDatos" type="text" name="nombreEmpresa" id="nombreEmpresa"><br>
+            </div>
+            <input type="submit" id="myID">
+            <input type="button" onclick="limpiarCampos()" value="Limpiar Campos">
+        </form>
+    </div>
+</body>
+</html>

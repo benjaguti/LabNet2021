@@ -1,0 +1,27 @@
+body{
+    background-image: url('../img/fondo1.jpg');
+      
+}
+
+.formulario
+{
+    width: 350px;
+    padding: 30px;
+    background:	#b0c4de;
+    margin: 40px;
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 8px 14px 40px #000;
+    font-family: 'Calibri';
+}
+
+.titulo
+{
+    margin:15px;
+}
+
+.ingresoDatos
+{
+    border-radius: 3px;
+    width: 100%;
+}
