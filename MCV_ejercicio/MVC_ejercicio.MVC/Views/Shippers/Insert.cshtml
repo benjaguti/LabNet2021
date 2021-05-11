@@ -1,0 +1,13 @@
+﻿@model MVC_ejercicio.MVC.Models.ShippersView
+@{
+    ViewBag.Title = "Pagina Insertar";
+}
+
+<p>Vista para insertar</p>
+
+@using (Html.BeginForm("Insert", "Shippers", FormMethod.Post))
+{
+    <label>Nombre de la compañia: </label> @Html.TextBoxFor(r => r.CompanyName)
+    <label>Numero de telefono: </label> @Html.TextBoxFor(r => r.PhoneNumber)
+    <input type="submit" class="btn btn-success" value="Guardar" />
+}

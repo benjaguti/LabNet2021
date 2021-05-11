@@ -1,0 +1,34 @@
+﻿@model List<MVC_ejercicio.MVC.Models.ShippersView>
+
+@{
+    ViewBag.Title = "Pagina de Shippers";
+ }
+
+<h2>Lista de Shippers</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre de la compañia</th>
+            <th scope="col">Teléfono</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shippers in Model)
+        {
+        <tr>
+            <th scope="row">@shippers.Id</th>
+            <td>@shippers.CompanyName</td>
+            <td>@shippers.PhoneNumber</td>
+        </tr>
+    
+
+    }
+        </tbody>
+    </table>
+
+<div>
+    @Html.ActionLink("Insertar Shipper", "Insert", "Shippers")
+
+</div>
