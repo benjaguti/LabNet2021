@@ -19,6 +19,7 @@ namespace MCV_ejercicio.Logic
         }
 
 
+
         public List<Shippers> GetAll()
         {
             return context.Shippers.ToList();
@@ -31,11 +32,18 @@ namespace MCV_ejercicio.Logic
             context.SaveChanges();
         }
 
+        public Shippers Obtener(int id) 
+        {
+            var shipUpdate = context.Shippers.Find(id);
+            return shipUpdate;
+        }
         public void Update(Shippers ship)
         {
             var shipUpdate = context.Shippers.Find(ship.ShipperID);
 
+            shipUpdate.CompanyName = ship.CompanyName;
             shipUpdate.Phone = ship.Phone;
+
 
             context.SaveChanges();
         }

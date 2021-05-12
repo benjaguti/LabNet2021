@@ -35,11 +35,11 @@ namespace MVC_ejercicio.MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Insert(ShippersView shipView) 
+        public ActionResult Insert(ShippersView shipView)
         {
             try
             {
-                Shippers shippersEntity = new Shippers { CompanyName = shipView.CompanyName, Phone= shipView.PhoneNumber};
+                Shippers shippersEntity = new Shippers { CompanyName = shipView.CompanyName, Phone = shipView.PhoneNumber };
 
                 logic.Insert(shippersEntity);
 
@@ -50,7 +50,38 @@ namespace MVC_ejercicio.MVC.Controllers
 
                 throw;
             }
-        } 
+        }
+
+        public ActionResult Delete(int id)
+        {
+            logic.Delete(id);
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult Update()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Update(ShippersView shipView)
+        {
+            try
+            {
+                Shippers shippersEntity = new Shippers {ShipperID=shipView.Id, CompanyName = shipView.CompanyName, Phone = shipView.PhoneNumber };
+
+                logic.Update(shippersEntity);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
     }
 }

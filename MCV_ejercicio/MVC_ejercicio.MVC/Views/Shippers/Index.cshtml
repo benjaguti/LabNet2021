@@ -12,6 +12,8 @@
             <th scope="col">ID</th>
             <th scope="col">Nombre de la compañia</th>
             <th scope="col">Teléfono</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +23,8 @@
             <th scope="row">@shippers.Id</th>
             <td>@shippers.CompanyName</td>
             <td>@shippers.PhoneNumber</td>
+            <td>@Html.ActionLink("Eliminar", "Delete", new { id = shippers.Id }, new { onclick = "return-confirm('Esta seguro de borrar el Shippers')" })</td>
+            <td>@Html.ActionLink("Editar", "Update", "Shippers")</td>
         </tr>
     
 

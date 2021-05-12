@@ -3,12 +3,12 @@
     ViewBag.Title = "Pagina Insertar";
 }
 
-<h1>Insertar nuevo shippers</h1>
-<br />
+<p>Vista para insertar</p>
 
-@using (Html.BeginForm("Insert", "Shippers", FormMethod.Post))
+@using (Html.BeginForm("Update", "Shippers", FormMethod.Post))
 {
+    <label>Id de Shippers a modificar: </label> @Html.TextBoxFor(r => r.Id)
     <label>Nombre de la compañia: </label> @Html.TextBoxFor(r => r.CompanyName)
     <label>Numero de telefono: </label> @Html.TextBoxFor(r => r.PhoneNumber)
-    <input type="submit" class="btn btn-success" value="Guardar" />
+    <input type="submit" class="btn btn-success" value="Editar" />
 }
